@@ -4,23 +4,26 @@
  * and open the template in the editor.
  */
 package siscdm.login;
-import javax.swing.JOptionPane;
 import siscdm.login.sqlquery.loginSqlQuery;
-import siscdm.registro.Ventana_registro;
 
 /**
  *
  * @author Ernesto Zeledon
  */
 public class iniciarSesion extends javax.swing.JFrame {
-    loginSqlQuery start = new loginSqlQuery();
-    String user = start.getUser();
-    String pass = start.getPass();
+    
+        loginSqlQuery start = new loginSqlQuery();
+        String user = start.getUser();
+        String pass = start.getPass();
+
     /**
      * Creates new form iniciarSesion
      */
     public iniciarSesion() {
         initComponents();
+        
+        
+        
         
     }
 
@@ -54,11 +57,6 @@ public class iniciarSesion extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,27 +102,15 @@ public class iniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        // TODO add your handling code here:        
-        //String us = txtfUsuario.getText();
-        //String pas = txtfContraseña.getText();
+        // TODO add your handling code here:
+        String us = txtfUsuario.getText();
+        String pas = txtfContraseña.getText();
         
-        if(txtfUsuario.getText().equals(user) && txtfContraseña.getText().equals(pass)){
-            Ventana_registro MainWindow = new Ventana_registro();  
-            MainWindow.setVisible(true);
-            this.setVisible(false);
-        }else {
-            //JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos." + " " + user + " " + pass);
-            JOptionPane.showMessageDialog(null, "Usuario ó Contraseña incorretos.");
+        if(us == user && pas == pass){
+            //Ventana_registro MainWindow = new Ventana_registro();
         }
         
     }//GEN-LAST:event_btnIniciarActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        txtfUsuario.setText("");
-        txtfContraseña.setText("");
-        System.exit(0);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
