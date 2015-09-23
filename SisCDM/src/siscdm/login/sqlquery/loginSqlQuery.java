@@ -55,6 +55,7 @@ public class loginSqlQuery {
                setPass(sqlpass);
                
            }
+           //JOptionPane.showMessageDialog(null,"Usuario: " + getUser() + " Contraseña: " + getPass());
         }
         catch(SQLException sqlex) {
             JOptionPane.showMessageDialog(null, "Error de SQL:> " + sqlex.getMessage());
