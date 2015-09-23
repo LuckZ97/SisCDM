@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package siscdm.login;
+import javax.swing.JOptionPane;
 import siscdm.login.sqlquery.loginSqlQuery;
+import siscdm.registro.Ventana_registro;
 
 /**
  *
@@ -103,11 +105,16 @@ public class iniciarSesion extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        String us = txtfUsuario.getText();
-        String pas = txtfContraseña.getText();
+        //String us = txtfUsuario.getText();
+        //String pas = txtfContraseña.getText();
         
-        if(us == user && pas == pass){
-            //Ventana_registro MainWindow = new Ventana_registro();
+        if(txtfUsuario.getText().equals(user) && txtfContraseña.getText().equals(pass)){
+            Ventana_registro MainWindow = new Ventana_registro();
+            MainWindow.setVisible(true);
+            this.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos.");
         }
         
     }//GEN-LAST:event_btnIniciarActionPerformed
@@ -116,28 +123,7 @@ public class iniciarSesion extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(iniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(iniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(iniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(iniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

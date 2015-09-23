@@ -3,6 +3,7 @@ package siscdm;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import siscdm.login.iniciarSesion;
 import siscdm.login.sqlquery.loginSqlQuery;
 import siscdm.registro.paciente.Identificacion;
 
@@ -28,8 +29,9 @@ public class SisCDM  extends JFrame{
     }
    
     public static void main(String[] args) {
-        Identificacion n = new Identificacion();
-        loginSqlQuery login = new loginSqlQuery();
+        //loginSqlQuery login = new loginSqlQuery();
+        iniciarSesion loginWindow = new iniciarSesion();
+        loginWindow.setVisible(true);
     }
 
     
