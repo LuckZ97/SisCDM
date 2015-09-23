@@ -3,6 +3,7 @@ package siscdm;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import siscdm.registro.paciente.Identificacion;
 
 public class SisCDM  extends JFrame{
     SisCDM(){
@@ -26,7 +27,7 @@ public class SisCDM  extends JFrame{
     }
    
     public static void main(String[] args) {
-        new SisCDM();
+        Identificacion n = new Identificacion();
     }
     
 }
