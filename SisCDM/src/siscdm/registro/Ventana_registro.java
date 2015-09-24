@@ -26,6 +26,7 @@ public class Ventana_registro extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        botonPrueba = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -44,6 +45,19 @@ public class Ventana_registro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         desktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        botonPrueba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/icono01.png"))); // NOI18N
+        botonPrueba.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonPrueba.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonPrueba.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        botonPrueba.setIconTextGap(10);
+        botonPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPruebaActionPerformed(evt);
+            }
+        });
+        desktopPane.add(botonPrueba);
+        botonPrueba.setBounds(140, 90, 103, 103);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -138,6 +152,13 @@ public class Ventana_registro extends javax.swing.JFrame {
         IdReg.setVisible(true);
     }//GEN-LAST:event_cutMenuItemActionPerformed
 
+    private void botonPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPruebaActionPerformed
+        // TODO add your handling code here:
+        Identificacion IdReg = new Identificacion();
+        desktopPane.add(IdReg);
+        IdReg.setVisible(true);
+    }//GEN-LAST:event_botonPruebaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,6 +196,7 @@ public class Ventana_registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton botonPrueba;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
