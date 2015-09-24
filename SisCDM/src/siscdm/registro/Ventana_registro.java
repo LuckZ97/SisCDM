@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package siscdm.registro;
 
 /**
  *
- * @author Dayana
+ * @author Data Collectors
  */
 public class Ventana_registro extends javax.swing.JFrame {
 
@@ -44,6 +40,8 @@ public class Ventana_registro extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

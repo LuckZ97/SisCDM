@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package siscdm.login;
 import javax.swing.JOptionPane;
 import siscdm.login.sqlquery.loginSqlQuery;
@@ -10,23 +6,15 @@ import siscdm.registro.Ventana_registro;
 
 /**
  *
- * @author Ernesto Zeledon
+ * @author Data Collectors
  */
 public class iniciarSesion extends javax.swing.JFrame {
-    
-        loginSqlQuery start = new loginSqlQuery();
-        String user = start.getUser();
-        String pass = start.getPass();
-
     /**
      * Creates new form iniciarSesion
-     */
+     */        
     public iniciarSesion() {
-        initComponents();
-        
-        
-        
-        
+        initComponents();    
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -40,10 +28,10 @@ public class iniciarSesion extends javax.swing.JFrame {
 
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
-        txtfContraseña = new javax.swing.JTextField();
         txtfUsuario = new javax.swing.JTextField();
         btnIniciar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        txtfContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +47,11 @@ public class iniciarSesion extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,8 +66,8 @@ public class iniciarSesion extends javax.swing.JFrame {
                             .addComponent(lblContraseña, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtfContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(txtfUsuario)))
+                            .addComponent(txtfUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(txtfContraseña)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(btnIniciar)
@@ -105,8 +98,11 @@ public class iniciarSesion extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        //String us = txtfUsuario.getText();
-        //String pas = txtfContraseña.getText();
+        String us = txtfUsuario.getText();
+        String pas = txtfContraseña.getText();
+        loginSqlQuery start = new loginSqlQuery(us, pas);
+        String user = start.getUser();
+        String pass = start.getPass();
         
         if(txtfUsuario.getText().equals(user) && txtfContraseña.getText().equals(pass)){
             Ventana_registro MainWindow = new Ventana_registro();
@@ -118,6 +114,13 @@ public class iniciarSesion extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnIniciarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        txtfUsuario.setText("");
+        txtfContraseña.setText("");
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,7 +141,7 @@ public class iniciarSesion extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JTextField txtfContraseña;
+    private javax.swing.JPasswordField txtfContraseña;
     private javax.swing.JTextField txtfUsuario;
     // End of variables declaration//GEN-END:variables
 }
