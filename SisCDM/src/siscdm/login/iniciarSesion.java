@@ -1,5 +1,6 @@
 
 package siscdm.login;
+import java.awt.Frame;
 import javax.swing.JOptionPane;
 import siscdm.login.sqlquery.loginSqlQuery;
 import siscdm.registro.Ventana_registro;
@@ -39,6 +40,12 @@ public class iniciarSesion extends javax.swing.JFrame {
 
         lblContraseña.setText("Contraseña:");
 
+        txtfUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfUsuarioActionPerformed(evt);
+            }
+        });
+
         btnIniciar.setText("Iniciar Sesion");
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +57,12 @@ public class iniciarSesion extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        txtfContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfContraseñaActionPerformed(evt);
             }
         });
 
@@ -107,6 +120,7 @@ public class iniciarSesion extends javax.swing.JFrame {
         if(txtfUsuario.getText().equals(user) && txtfContraseña.getText().equals(pass)){
             Ventana_registro MainWindow = new Ventana_registro();
             MainWindow.setVisible(true);
+            MainWindow.setExtendedState(Ventana_registro.MAXIMIZED_BOTH);
             this.setVisible(false);
         }
         else{
@@ -121,6 +135,16 @@ public class iniciarSesion extends javax.swing.JFrame {
         txtfContraseña.setText("");
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtfContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfContraseñaActionPerformed
+        // TODO add your handling code here:
+        btnIniciarActionPerformed(evt);
+    }//GEN-LAST:event_txtfContraseñaActionPerformed
+
+    private void txtfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfUsuarioActionPerformed
+        // TODO add your handling code here:
+        txtfUsuario.transferFocus();
+    }//GEN-LAST:event_txtfUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

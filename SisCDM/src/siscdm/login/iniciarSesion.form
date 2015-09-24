@@ -83,6 +83,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtfUsuario">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtfUsuarioActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnIniciar">
       <Properties>
@@ -101,6 +104,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtfContrase&#xf1;a">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtfContrase&#xf1;aActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
