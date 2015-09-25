@@ -4,12 +4,19 @@
  * and open the template in the editor.
  */
 package siscdm.registro.paciente;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import siscdm.registro.paciente.sqlUpdates.regSqlUpdates;
 
 /**
  *
  * @author Dayana
  */
 public class Identificacion extends javax.swing.JInternalFrame {
+    
+    String numExp, primApellido, segApellido, nombres, sexo, estCivil, docLegal, numIdentidad, ocupacion, dirHabitual, noTelPaciente;
+    String nomPadre, nomMadre, nomConyugue, respPaciente, dirResponsable, telResponsable;
+    String propDatosPersonales, propDatosIden, tomoInformacion, observaciones, propParentesco, propDatosNoIden, fechaInsc;
 
     /**
      * Creates new form NewJInternalFrame
@@ -64,8 +71,8 @@ public class Identificacion extends javax.swing.JInternalFrame {
         txtNoIdentidad = new javax.swing.JTextField();
         lblOcupacion = new javax.swing.JLabel();
         txtOcupacion = new javax.swing.JTextField();
-        lblDichabitual = new javax.swing.JLabel();
-        txtDichabitual = new javax.swing.JTextField();
+        lblDirhabitual = new javax.swing.JLabel();
+        txtDirhabitual = new javax.swing.JTextField();
         lblTelDireccion = new javax.swing.JLabel();
         txtTelDireccion = new javax.swing.JTextField();
         lblB_Familia = new javax.swing.JLabel();
@@ -96,13 +103,14 @@ public class Identificacion extends javax.swing.JInternalFrame {
         txtFechaIns = new javax.swing.JTextField();
         lblObsevaciones = new javax.swing.JLabel();
         txtObservaciones = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
 
         setClosable(true);
         setMaximizable(true);
         setTitle("Creacion de Expediente");
+        setPreferredSize(new java.awt.Dimension(860, 800));
 
         lblNombreHospital.setText("HOSPITAL NACIONAL \"SAN JUAN DE DIOS\" SAN MIGUEL");
 
@@ -184,14 +192,39 @@ public class Identificacion extends javax.swing.JInternalFrame {
         lblEstCivil.setText("4. Estado Civil:");
 
         rbtnSoltero.setText("Soltero(a)");
+        rbtnSoltero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnSolteroActionPerformed(evt);
+            }
+        });
 
         rbtnCasado.setText("Casado(a)");
+        rbtnCasado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnCasadoActionPerformed(evt);
+            }
+        });
 
         rbtnDivorciado.setText("Divorciado(a)");
+        rbtnDivorciado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnDivorciadoActionPerformed(evt);
+            }
+        });
 
         rbtnViuda.setText("Viudo(a)");
+        rbtnViuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnViudaActionPerformed(evt);
+            }
+        });
 
         rbtnAcompañado.setText("Acompañado(a)");
+        rbtnAcompañado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnAcompañadoActionPerformed(evt);
+            }
+        });
 
         lblDocLegal.setText("5. Documento Legal de Identidad:");
 
@@ -211,7 +244,7 @@ public class Identificacion extends javax.swing.JInternalFrame {
 
         lblOcupacion.setText("6. Ocupación: ");
 
-        lblDichabitual.setText("7. Dirección habitual:");
+        lblDirhabitual.setText("7. Dirección habitual:");
 
         lblTelDireccion.setText("Tel:");
 
@@ -241,6 +274,12 @@ public class Identificacion extends javax.swing.JInternalFrame {
 
         lblDoc_Legal.setText("Documento legal de identificación:");
 
+        txtDoc_Legal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDoc_LegalActionPerformed(evt);
+            }
+        });
+
         lblTomoInfo.setText("Tomo información:");
 
         lblParentesco.setText("Parentesco:");
@@ -251,11 +290,26 @@ public class Identificacion extends javax.swing.JInternalFrame {
 
         lblObsevaciones.setText("Observaciones:");
 
-        jButton1.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Guardar");
+        Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Nuevo");
+        btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -316,7 +370,7 @@ public class Identificacion extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(18, 18, 18)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton3)
+                                        .addComponent(btnNuevo)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(lblFechaIns)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -326,9 +380,9 @@ public class Identificacion extends javax.swing.JInternalFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2)
+                            .addComponent(Guardar)
                             .addGap(18, 18, 18)
-                            .addComponent(jButton1)))
+                            .addComponent(btnCancelar)))
                     .addComponent(lblB_Familia)
                     .addComponent(lblC_Informacion)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -403,14 +457,14 @@ public class Identificacion extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNoIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblDichabitual)
+                        .addComponent(lblDirhabitual)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtDichabitual, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDirhabitual, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblTelDireccion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTelDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblNomExp)
@@ -481,11 +535,11 @@ public class Identificacion extends javax.swing.JInternalFrame {
                     .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDichabitual)
+                    .addComponent(lblDirhabitual)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblTelDireccion)
                         .addComponent(txtTelDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtDichabitual, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDirhabitual, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblB_Familia)
                 .addGap(18, 18, 18)
@@ -544,11 +598,11 @@ public class Identificacion extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblObsevaciones)
                     .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnNuevo)
+                    .addComponent(btnCancelar)
+                    .addComponent(Guardar))
                 .addContainerGap())
         );
 
@@ -558,11 +612,11 @@ public class Identificacion extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -578,6 +632,7 @@ public class Identificacion extends javax.swing.JInternalFrame {
 
     private void rbtnSexMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnSexMasculinoActionPerformed
         // TODO add your handling code here:
+        sexo = "Maculino";
     }//GEN-LAST:event_rbtnSexMasculinoActionPerformed
 
     private void txtHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorasActionPerformed
@@ -586,6 +641,7 @@ public class Identificacion extends javax.swing.JInternalFrame {
 
     private void rbtnSexFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnSexFemeninoActionPerformed
         // TODO add your handling code here:
+        sexo = "Femenino";
     }//GEN-LAST:event_rbtnSexFemeninoActionPerformed
 
     private void txtNoIdentidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoIdentidadActionPerformed
@@ -612,11 +668,95 @@ public class Identificacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumExpActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+          
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        //Se declaran las variables para obtner el texto de los campos de texto de la zona A) Del Paciente
+        numExp = txtNumExp.getText();
+        primApellido = txtPrimApellido.getText();
+        segApellido = txtSegApellido.getText();
+        nombres = txtNombre.getText();
+        docLegal = txtDocLegal.getText();
+        numIdentidad = txtNoIdentidad.getText();
+        ocupacion = txtOcupacion.getText();
+        dirHabitual = txtDirhabitual.getText();
+        noTelPaciente = txtTelDireccion.getText();
+        
+        //Se declaran variables para obtener el texto de los campos de texto de la Zona B) De La Familia
+        nomPadre = txtNomPadre.getText();
+        nomMadre = txtNomMadre.getText();
+        nomConyugue = txtNomConyugue.getText();
+        respPaciente = txtRespPaciente.getText();
+        dirResponsable = txtDirResponsable.getText();
+        telResponsable = txtTelResponsable.getText();
+        
+        //Se declaran las variables para obtener el texto de los campos de texto de la zona C) De La Informacion
+        propDatosPersonales = txtDatosPersonales.getText();
+        propDatosIden =  txtDoc_Legal.getText();
+        tomoInformacion = txtTomoInfo.getText();
+        observaciones = txtObservaciones.getText();
+        propParentesco = txtParentesco.getText();
+        propDatosNoIden = txtNoDoc.getText();
+        fechaInsc = txtFechaIns.getText();
+        
+        regSqlUpdates pacIngreso = new regSqlUpdates(numExp, primApellido, segApellido, nombres, docLegal, numIdentidad, ocupacion, dirHabitual, noTelPaciente);
+        
+        /*pacIngreso.setNoExp(numExp);
+        pacIngreso.setPriApe(primApellido);
+        pacIngreso.setSegApe(segApellido);
+        pacIngreso.setNom(nombres);
+        pacIngreso.setDocLeTip(docLegal);
+        pacIngreso.setDui(numIdentidad);
+        pacIngreso.setOcup(ocupacion);
+        pacIngreso.setDirHab(dirHabitual);
+        pacIngreso.setNoTel(noTelPaciente);
+        pacIngreso.setFDeNa("2000-2-6");
+        pacIngreso.setEstCivil(estCivil);
+        */
+        
+    }//GEN-LAST:event_GuardarActionPerformed
+
+    private void rbtnSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnSolteroActionPerformed
+        // TODO add your handling code here:
+        estCivil = "Soltero/a";
+    }//GEN-LAST:event_rbtnSolteroActionPerformed
+
+    private void rbtnCasadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCasadoActionPerformed
+        // TODO add your handling code here:
+        estCivil = "Casado/a";
+    }//GEN-LAST:event_rbtnCasadoActionPerformed
+
+    private void rbtnDivorciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnDivorciadoActionPerformed
+        // TODO add your handling code here:
+        estCivil = "Divorciado/a";
+    }//GEN-LAST:event_rbtnDivorciadoActionPerformed
+
+    private void rbtnViudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnViudaActionPerformed
+        // TODO add your handling code here:
+        estCivil = "Viuda";
+    }//GEN-LAST:event_rbtnViudaActionPerformed
+
+    private void rbtnAcompañadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnAcompañadoActionPerformed
+        // TODO add your handling code here:
+        estCivil = "Acompañado/a";
+    }//GEN-LAST:event_rbtnAcompañadoActionPerformed
+
+    private void txtDoc_LegalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoc_LegalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDoc_LegalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton Guardar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblA_Paciente;
@@ -625,8 +765,8 @@ public class Identificacion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblC_Informacion;
     private javax.swing.JLabel lblDatosPersonales;
     private javax.swing.JLabel lblDias;
-    private javax.swing.JLabel lblDichabitual;
     private javax.swing.JLabel lblDirResponsable;
+    private javax.swing.JLabel lblDirhabitual;
     private javax.swing.JLabel lblDocLegal;
     private javax.swing.JLabel lblDoc_Legal;
     private javax.swing.JLabel lblEdad;
@@ -662,8 +802,8 @@ public class Identificacion extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton rbtnViuda;
     private javax.swing.JTextField txtDatosPersonales;
     private javax.swing.JTextField txtDias;
-    private javax.swing.JTextField txtDichabitual;
     private javax.swing.JTextField txtDirResponsable;
+    private javax.swing.JTextField txtDirhabitual;
     private javax.swing.JTextField txtDocLegal;
     private javax.swing.JTextField txtDoc_Legal;
     private javax.swing.JTextField txtEdad;

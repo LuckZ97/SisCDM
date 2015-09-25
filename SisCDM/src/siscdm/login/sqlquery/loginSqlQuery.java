@@ -15,7 +15,7 @@ public class loginSqlQuery {
     
     //Metodo para establecer id del usuario
     public void setId(int idusuario){
-        int id = idusuario;
+        id = idusuario;
     }
     
     //Metodo para devolver el valor de "id" despues de usar el metodo setId()
