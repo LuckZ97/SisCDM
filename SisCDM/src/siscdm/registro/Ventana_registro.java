@@ -57,7 +57,7 @@ public class Ventana_registro extends javax.swing.JFrame {
             }
         });
         desktopPane.add(botonPrueba);
-        botonPrueba.setBounds(140, 90, 103, 103);
+        botonPrueba.setBounds(430, 160, 103, 103);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -131,11 +131,11 @@ public class Ventana_registro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 875, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
 
         pack();
