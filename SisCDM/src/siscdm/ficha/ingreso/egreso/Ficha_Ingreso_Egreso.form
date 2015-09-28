@@ -251,8 +251,11 @@
                                                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="txt_NT" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
-                                                  <Component id="txt_EC" alignment="1" min="-2" pref="108" max="-2" attributes="0"/>
                                               </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                              <Component id="txt_EC" min="-2" pref="108" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -415,7 +418,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="txt_EC" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -479,7 +482,7 @@
                       <Component id="txt_RI" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" pref="24" max="32767" attributes="0"/>
+              <EmptySpace type="separate" pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bt_Nuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="bt_Ingreso" alignment="3" min="-2" max="-2" attributes="0"/>
