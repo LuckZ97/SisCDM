@@ -6,7 +6,6 @@
 package siscdm.registro.paciente;
 import java.sql.*;
 import javax.swing.JOptionPane;
-import siscdm.registro.paciente.sqlUpdates.regSqlUpdates;
 
 /**
  *
@@ -17,12 +16,27 @@ public class Identificacion extends javax.swing.JInternalFrame {
     String numExp, primApellido, segApellido, nombres, sexo, estCivil, docLegal, numIdentidad, ocupacion, dirHabitual, noTelPaciente;
     String nomPadre, nomMadre, nomConyugue, respPaciente, dirResponsable, telResponsable;
     String propDatosPersonales, propDatosIden, tomoInformacion, observaciones, propParentesco, propDatosNoIden, fechaInsc;
-
+    int edad, meses, dias, horas;
     /**
      * Creates new form NewJInternalFrame
      */
     public Identificacion() {
         initComponents();
+    }
+    
+    public int convertStringToInt(){
+        String ed = txtEdad.getText();
+        String mes = txtMeses.getText();
+        String di = txtDias.getText();
+        String ho = txtHoras.getText();
+        
+        
+        int e = Integer.parseInt(ed);
+        int m = Integer.parseInt(mes);
+        int d = Integer.parseInt(di);
+        int h = Integer.parseInt(ho);
+        
+        return e;
     }
 
     /**
@@ -172,6 +186,12 @@ public class Identificacion extends javax.swing.JInternalFrame {
         lblAños.setText("Años:");
 
         lblMeses.setText("Meses:");
+
+        txtMeses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMesesActionPerformed(evt);
+            }
+        });
 
         lblDias.setText("Dias:");
 
@@ -683,11 +703,16 @@ public class Identificacion extends javax.swing.JInternalFrame {
         primApellido = txtPrimApellido.getText();
         segApellido = txtSegApellido.getText();
         nombres = txtNombre.getText();
+        //edad = Integer.valueOf(txtEdad.getText());
+        //meses = Integer.valueOf(txtMeses.getText());
+        //dias = Integer.valueOf(txtDias.getText());
+        //horas = Integer.valueOf(txtHoras.getText());
         docLegal = txtDocLegal.getText();
         numIdentidad = txtNoIdentidad.getText();
         ocupacion = txtOcupacion.getText();
         dirHabitual = txtDirhabitual.getText();
         noTelPaciente = txtTelDireccion.getText();
+        //edad = Integer.valueOf(txtEdad.getText());
         
         //Se declaran variables para obtener el texto de los campos de texto de la Zona B) De La Familia
         nomPadre = txtNomPadre.getText();
@@ -706,7 +731,74 @@ public class Identificacion extends javax.swing.JInternalFrame {
         propDatosNoIden = txtNoDoc.getText();
         fechaInsc = txtFechaIns.getText();
         
-        regSqlUpdates pacIngreso = new regSqlUpdates(numExp, primApellido, segApellido, nombres, docLegal, numIdentidad, ocupacion, dirHabitual, noTelPaciente);
+        
+        //regSqlUpdates pacIngreso = new regSqlUpdates(numExp, primApellido, segApellido, nombres, docLegal, numIdentidad, ocupacion, dirHabitual, noTelPaciente);
+        
+        try {
+            System.out.println("Intentando conectarme a la base de datos......");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/registro_pacientes", "root", "");
+            
+            Statement state = con.createStatement();
+            
+            /*PreparedStatement pst = con.prepareStatement("INSERT INTO paciente (Dui, NoExpediente, PriApellido, SegApellido, Nombres, Sexo, FdeNacimiento, Edad, Meses, Dias, Horas, EstCivil, DocLegIdenTipo, Ocupacion, DirHabitual, NoTelefono) VALUES ('?', '?', '?', '?', '?', '?', '?','?', '?', '?', '?', '?', '?' ,'?' , '?', '?')");
+            pst.setString(1, numIdentidad);
+            pst.setString(2, numExp);
+            pst.setString(3, primApellido);
+            pst.setString(4, segApellido);
+            pst.setString(5, nombres);
+            pst.setString(6, sexo);
+            pst.setString(7, "1997-02-52");
+            pst.setInt(8, edad);
+            pst.setInt(9, meses);
+            pst.setInt(10, dias);
+            pst.setInt(11, horas);
+            pst.setString(12, estCivil);
+            pst.setString(13, docLegal);
+            pst.setString(14, ocupacion);
+            pst.setString(15, dirHabitual);
+            pst.setString(16, noTelPaciente);
+            
+            pst.executeUpdate();*/
+            
+            PreparedStatement pst = con.prepareStatement("INSERT INTO paciente (Dui, NoExpediente, PriApellido, SegApellido, Nombres, Sexo, FdeNacimiento, Edad, Meses, Dias, Horas, EstCivil, DocLegIdenTipo, Ocupacion, DirHabitual, NoTelefono) VALUES ('?', '?', '?', '?', '?', '?', '?','?', '?', '?', '?', '?', '?' ,'?' , '?', '?')");
+            pst.setString(1, txtNoIdentidad.getText());
+            pst.setString(2, txtNumExp.getText());
+            pst.setString(3, txtPrimApellido.getText());
+            pst.setString(4, txtSegApellido.getText());
+            pst.setString(5, txtNombre.getText());
+            pst.setString(6, sexo);
+            pst.setString(7, "1997-02-52");
+            pst.setInt(8, 25);
+            pst.setInt(9, 0);
+            pst.setInt(10, 0);
+            pst.setInt(11, 0);
+            pst.setString(12, estCivil);
+            pst.setString(13, txtDocLegal.getText());
+            pst.setString(14, txtOcupacion.getText());
+            pst.setString(15, txtDirhabitual.getText());
+            pst.setString(16, txtTelDireccion.getText());
+            
+            int i =0;
+            if (pst.executeUpdate() > 0){
+                pst.executeUpdate();
+            }else{
+                JOptionPane.showMessageDialog(null, "Ningun dato que insertar");
+            }
+            
+            System.out.println("Datos Ingresados con exito");
+        }
+        catch(SQLException sqlex){
+            System.out.println("Error de SQL:> " + sqlex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error de SQL:> " + sqlex.getMessage());
+        }catch(ClassNotFoundException clex){
+            JOptionPane.showMessageDialog(null, "Error de ClassNotFound:> " + clex.getMessage());
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Error Exception:> " + ex.getMessage());
+        }
+        
+        
+        
         
         /*pacIngreso.setNoExp(numExp);
         pacIngreso.setPriApe(primApellido);
@@ -751,6 +843,10 @@ public class Identificacion extends javax.swing.JInternalFrame {
     private void txtDoc_LegalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDoc_LegalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDoc_LegalActionPerformed
+
+    private void txtMesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMesesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

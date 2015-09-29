@@ -126,10 +126,11 @@ public class regSqlUpdates {
             Connection regSql = DriverManager.getConnection("jdbc:mysql://127.0.0.1/registro_pacientes", "root","");
             Statement regState = regSql.createStatement();
             
-            regState.executeUpdate("INSERT INTO paciente ('Dui', 'NoExpediente', 'PriApellido', 'SegApellido', 'Nombres', 'Sexo', 'FdeNacimiento', 'Edad', 'Meses', 'Dias', 'Horas', 'EstCivil', 'DocLegIdenTipo', 'Ocupacion', 'DirHabitual', 'NoTelefono') VALUES (" + "\"" +  dui + "\"" + "\"" +  noExp + "\"" + "\"" +  priApe + "\""
+            /*regState.execute("INSERT INTO paciente ('Dui', 'NoExpediente', 'PriApellido', 'SegApellido', 'Nombres', 'Sexo', 'FdeNacimiento', 'Edad', 'Meses', 'Dias', 'Horas', 'EstCivil', 'DocLegIdenTipo', 'Ocupacion', 'DirHabitual', 'NoTelefono') VALUES (" + "\"" +  dui + "\"" + "\"" +  noExp + "\"" + "\"" +  priApe + "\""
                     + "\"" +  segApe + "\"" + "\"" +  nom + "\"" + "\"" +  sexo + "\"" + "\"" + fDeNa + "\"" + "\"" +  edad + "\"" + "\""
                     +  meses + "\"" + "\"" +  dias + "\"" + "\"" +  horas + "\"" + "\"" +  estCivil + "\"" + "\"" +  docLeTip + "\"" + "\""
                     +  ocup + "\"" + "\"" +  dirHab + "\"" + "\"" +  noTel + "\"" + ")");
+                    */
         }
         catch(SQLException sqlex) {
             JOptionPane.showMessageDialog(null, "Error de SQL:> " + sqlex.getMessage());
