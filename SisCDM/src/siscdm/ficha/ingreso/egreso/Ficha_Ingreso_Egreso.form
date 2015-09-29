@@ -58,7 +58,9 @@
                               <EmptySpace min="-2" pref="337" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="txt_SA" min="-2" pref="196" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txt_N" min="-2" pref="260" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -401,9 +403,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="txt_PA" min="-2" pref="174" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="txt_SA" min="-2" pref="184" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="519" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="739" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>

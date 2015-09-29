@@ -654,7 +654,9 @@ public class Ficha_Ingreso_Egreso extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(337, 337, 337))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(299, 299, 299)
+                                .addGap(85, 85, 85)
+                                .addComponent(txt_SA, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(txt_N, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
@@ -907,9 +909,7 @@ public class Ficha_Ingreso_Egreso extends javax.swing.JInternalFrame {
                         .addGap(455, 455, 455))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(txt_PA, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(txt_SA, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(519, 519, 519))))
+                        .addGap(739, 739, 739))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
