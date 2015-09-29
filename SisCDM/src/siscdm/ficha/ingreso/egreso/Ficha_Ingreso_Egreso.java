@@ -1201,6 +1201,16 @@ public class Ficha_Ingreso_Egreso extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btTH_LimpiarActionPerformed
 
+     public static void main(String args[]) {
+    
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Ficha_Ingreso_Egreso().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton RB_F;
