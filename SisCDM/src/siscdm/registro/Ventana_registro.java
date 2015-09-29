@@ -27,6 +27,7 @@ public class Ventana_registro extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         botonPrueba = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -44,11 +45,12 @@ public class Ventana_registro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        desktopPane.setBackground(new java.awt.Color(204, 204, 204));
         desktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        botonPrueba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/icono01.png"))); // NOI18N
+        botonPrueba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/yooooo.icn.jpg"))); // NOI18N
         botonPrueba.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botonPrueba.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonPrueba.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botonPrueba.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         botonPrueba.setIconTextGap(10);
         botonPrueba.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +59,11 @@ public class Ventana_registro extends javax.swing.JFrame {
             }
         });
         desktopPane.add(botonPrueba);
-        botonPrueba.setBounds(140, 90, 103, 103);
+        botonPrueba.setBounds(20, 220, 180, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/final.jpg"))); // NOI18N
+        desktopPane.add(jLabel1);
+        jLabel1.setBounds(20, 10, 660, 200);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -131,11 +137,11 @@ public class Ventana_registro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -206,6 +212,7 @@ public class Ventana_registro extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
