@@ -1,6 +1,11 @@
 
 package siscdm.registro;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import siscdm.registro.image.ImagenFondo;
 import siscdm.registro.paciente.Identificacion;
 
 /**
@@ -8,12 +13,14 @@ import siscdm.registro.paciente.Identificacion;
  * @author Data Collectors
  */
 public class Ventana_registro extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Ventana_registro
      */
     public Ventana_registro() {
         initComponents();
+        desktopPane.setBorder(new ImagenFondo());
+        this.setExtendedState(Ventana_registro.MAXIMIZED_BOTH);
     }
 
     /**
@@ -27,7 +34,6 @@ public class Ventana_registro extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         botonPrueba = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -46,6 +52,7 @@ public class Ventana_registro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         desktopPane.setBackground(new java.awt.Color(204, 204, 204));
+        desktopPane.setAutoscrolls(true);
         desktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         botonPrueba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/yooooo.icn.jpg"))); // NOI18N
@@ -58,12 +65,24 @@ public class Ventana_registro extends javax.swing.JFrame {
                 botonPruebaActionPerformed(evt);
             }
         });
-        desktopPane.add(botonPrueba);
-        botonPrueba.setBounds(20, 220, 180, 50);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/siscdm/registro/img/final.jpg"))); // NOI18N
-        desktopPane.add(jLabel1);
-        jLabel1.setBounds(20, 10, 660, 200);
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(desktopPaneLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(botonPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(492, Short.MAX_VALUE))
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(desktopPaneLayout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(botonPrueba, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        desktopPane.setLayer(botonPrueba, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -137,11 +156,11 @@ public class Ventana_registro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(desktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(desktopPane)
         );
 
         pack();
@@ -212,7 +231,6 @@ public class Ventana_registro extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
