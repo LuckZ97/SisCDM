@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
-    <Property name="maximizable" type="boolean" value="true"/>
+    <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="title" type="java.lang.String" value="Creacion de Expediente"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[860, 800]"/>
@@ -27,12 +27,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="1" pref="861" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="0" pref="880" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -46,90 +46,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblNomExp" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="txtNumExp" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblDirResponsable" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRespPaciente" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNomConyugue" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNomMadre" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNomPadre" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNomPadre" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                                  <Component id="txtNomMadre" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                                  <Component id="txtNomConyugue" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                                  <Component id="txtRespPaciente" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                                  <Component id="txtDirResponsable" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblTelResponsable" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtTelResponsable" min="-2" pref="97" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="lblNombreHospital" alignment="2" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblIdentificacion" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTomoInfo" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="txtTomoInfo" min="-2" pref="213" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblDoc_Legal" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtDoc_Legal" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblDatosPersonales" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtDatosPersonales" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                                          <Component id="lblNoDoc" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtNoDoc" min="-2" pref="104" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                          <Component id="lblParentesco" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtParentesco" min="-2" pref="63" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="btnNuevo" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="lblFechaIns" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="txtFechaIns" min="-2" pref="201" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblObsevaciones" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtObservaciones" min="-2" pref="232" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="Guardar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="lblB_Familia" min="-2" max="-2" attributes="0"/>
@@ -194,6 +125,12 @@
                                       <Component id="lblHoras" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="txtHoras" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <EmptySpace min="386" pref="386" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Guardar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnCancelar" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnNuevo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -234,15 +171,79 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtTelDireccion" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblDirResponsable" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblRespPaciente" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNomConyugue" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNomMadre" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNomPadre" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtDirResponsable" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtNomPadre" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                          <Component id="txtNomMadre" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                          <Component id="txtNomConyugue" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                          <Component id="txtRespPaciente" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lblTelResponsable" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="txtTelResponsable" min="-2" pref="97" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblTomoInfo" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="txtTomoInfo" min="-2" pref="213" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblDoc_Legal" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtDoc_Legal" min="-2" pref="144" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblDatosPersonales" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtDatosPersonales" min="-2" pref="100" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                          <Component id="lblNoDoc" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtNoDoc" min="-2" pref="104" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                          <Component id="lblParentesco" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtParentesco" min="-2" pref="63" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lblFechaIns" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="txtFechaIns" min="-2" pref="201" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lblObsevaciones" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtObservaciones" min="-2" pref="232" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="199" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblNomExp" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtNumExp" min="-2" pref="105" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <EmptySpace min="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -280,31 +281,40 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rbtnSexMasculino" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnSexFemenino" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblEdad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAños" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblMeses" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDias" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblHoras" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtMeses" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDias" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtHoras" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblEstCivil" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnSoltero" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnCasado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnDivorciado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnViuda" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rbtnAcompañado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rbtnSexMasculino" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnSexFemenino" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAños" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblMeses" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDias" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblHoras" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMeses" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDias" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtHoras" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblEstCivil" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnSoltero" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnCasado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnDivorciado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnViuda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rbtnAcompañado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="Guardar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -313,10 +323,18 @@
                           <Component id="lblNoIdentidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtNoIdentidad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblOcupacion" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtOcupacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblOcupacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtOcupacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -354,46 +372,50 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblDirResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDirResponsable" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblDirResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDirResponsable" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblC_Informacion" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblDatosPersonales" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtDatosPersonales" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblDoc_Legal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtDoc_Legal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="lblTomoInfo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblParentesco" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtParentesco" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblNoDoc" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtNoDoc" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtTomoInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblFechaIns" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtFechaIns" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="lblTelResponsable" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtTelResponsable" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblC_Informacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblDatosPersonales" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDatosPersonales" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblDoc_Legal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDoc_Legal" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblTomoInfo" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblParentesco" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtParentesco" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblNoDoc" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNoDoc" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtTomoInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblFechaIns" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtFechaIns" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -401,13 +423,7 @@
                           <Component id="lblObsevaciones" min="-2" max="-2" attributes="0"/>
                           <Component id="txtObservaciones" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Guardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="172" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -449,11 +465,13 @@
             <Component class="javax.swing.JTextField" name="txtPrimApellido">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrimApellidoActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPrimApellidoKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtSegApellido">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSegApellidoActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSegApellidoKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblSegApellido">
@@ -503,6 +521,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEdad">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEdadKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblMeses">
               <Properties>
@@ -510,6 +531,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMeses">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMesesActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMesesKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDias">
               <Properties>
@@ -519,6 +544,7 @@
             <Component class="javax.swing.JTextField" name="txtDias">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDiasActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDiasKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblHoras">
@@ -529,6 +555,7 @@
             <Component class="javax.swing.JTextField" name="txtHoras">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHorasActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtHorasKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblEstCivil">
@@ -594,6 +621,7 @@
             <Component class="javax.swing.JTextField" name="txtNoIdentidad">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNoIdentidadActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNoIdentidadKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblOcupacion">
@@ -602,6 +630,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtOcupacion">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtOcupacionActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDirhabitual">
               <Properties>
@@ -609,6 +640,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDirhabitual">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDirhabitualActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblTelDireccion">
               <Properties>
@@ -616,6 +650,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelDireccion">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelDireccionActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblB_Familia">
               <Properties>
@@ -628,6 +665,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomPadre">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomPadreActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomPadreKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblNomMadre">
               <Properties>
@@ -635,6 +676,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomMadre">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomMadreActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomMadreKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblNomConyugue">
               <Properties>
@@ -642,6 +687,10 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomConyugue">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomConyugueActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNomConyugueKeyTyped"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblRespPaciente">
               <Properties>
@@ -651,6 +700,7 @@
             <Component class="javax.swing.JTextField" name="txtRespPaciente">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRespPacienteActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRespPacienteKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDirResponsable">
@@ -659,6 +709,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDirResponsable">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDirResponsableActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblTelResponsable">
               <Properties>
@@ -666,6 +719,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelResponsable">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelResponsableActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblC_Informacion">
               <Properties>
@@ -678,6 +734,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDatosPersonales">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDatosPersonalesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDoc_Legal">
               <Properties>
@@ -695,6 +754,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTomoInfo">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTomoInfoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblParentesco">
               <Properties>
@@ -702,6 +764,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtParentesco">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtParentescoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblNoDoc">
               <Properties>
@@ -709,6 +774,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNoDoc">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNoDocActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFechaIns">
               <Properties>
@@ -716,6 +784,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtFechaIns">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaInsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblObsevaciones">
               <Properties>
@@ -723,6 +794,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtObservaciones">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtObservacionesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCancelar">
               <Properties>
